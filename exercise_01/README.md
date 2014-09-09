@@ -1,3 +1,7 @@
+## Startujemy
+
+
+
 #!/bin/bash
 
 sudo docker run -it ubuntu cat /etc/issue czy cos w tym stylu
