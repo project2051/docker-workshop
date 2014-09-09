@@ -23,4 +23,4 @@ $ docker ps -l
 
 $ docker commit <ID 'ZMUTOWANEGO' KONTENERA> learn/withhtop
 ```
-Polecenie `docker commit` wywołane z ID bazowego obrazu zwróci nam identyfikator nowopowstałego kontenera
+Polecenie `docker commit` wywołane z ID bazowego obrazu zwróci nam identyfikator nowopowstałego kontenera. Wywołując natomiast `docker inspect <ID>` uzyskamy zgrabny JSON ze szczegółami kontenera.
