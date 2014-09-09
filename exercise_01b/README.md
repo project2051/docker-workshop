@@ -14,3 +14,7 @@ Teraz możemy na tym obrazie wykonywać różne procesy, tak jak poprzednio:
 ```
 docker run learn/tutorial echo "JOU!"
 ```
+Rzućy okiem na kolekcję ściągniętych na nasz komputer obrazów:
+```
+docker images
+```
