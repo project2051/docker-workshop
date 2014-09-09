@@ -13,11 +13,6 @@ htop
 ```
 Nawiasem mówiąc, warto zwrócić uwagę na ile kontener jest odizolowaną pulą procesów. Co widać w htopie? :smile:
 
-Spróbujmy wyjść z kontenera. Tak naprawdę wyjście jest równoznaczne z zakończeniem procesu powłoki, który jest podstawą naszego kontenera.
+Spróbujmy wyjść z kontenera. Tak naprawdę wyjście jest równoznaczne z zakończeniem procesu powłoki, który jest podstawą naszego kontenera. Ponowne uruchomienie kontenera z obrazu ubuntu i uruchomienie w nim htop-a wywoła błąd - brak tego programu.
 
-
-@TODO
-
-przy okazji opowiedziec o commitowaniu
-
-i zacommitowac
+Polecenie `docker ps -l` (l jak latest) wyświetli nam uruchomione kontenery, także te, które już się zakończyły. Aby uzyskać więcej opcji konkretnej komendy dockera, poprzedzamy ją parametrem 'help', np. `docker help ps`. 
