@@ -21,6 +21,13 @@ CO SIE STAUO?!
 ```
 $ docker run -it ubuntu /bin/bash
 ```
-Teraz znajdujemy się 'w środku' kontenera
+Teraz znajdujemy się 'w środku' kontenera.
+
+Sama komenda `docker` posiada wiele poleceń, np. `docker version`, wielu z nich przyjrzymy się jeszcze później. 
+
+Użyty przez nas obraz 'ubuntu' to tylko przykład. Istnieje repozytorium z setkami gotowych kontenerów, z odpowiednimi dystrybucjami linuksa pod maską i preinstalowanymi pakietami. Bardzo łatwo je przeszukać poleceniem search:
+```
+docker search jenkins
+```
 
 
