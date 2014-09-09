@@ -1,0 +1,19 @@
+FROM ubuntu:latest
+MAINTAINER i_and_i "me@me.me"
+
+# Instalacja paczki ping
+RUN \
+  apt-get update && \
+  apt-get install -y ping
+
+# Edycja jakiś konfiguracji, tak dla ściemy 
+RUN \
+  echo "some content" > /etc/example_config
+RUN echo "listen-address *:8118" >> /etc/example_config
+RUN echo "debug 512" >> /etc/example_config
+
+
+# Robienie roboty
+CMD \
+  echo "Hi! " && \
+  ping google.com
