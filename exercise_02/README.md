@@ -19,10 +19,8 @@ Polecenie `docker ps -l` (l jak latest) wyświetli nam uruchomione kontenery, ta
 
 Oczywiście sam bazowy obraz często nam nie wystarczy, dlatego po zainstalowaniu htopa na kontenerze, zacommitujmy zmiany:
 ```
-$docker ps -l
-CONTAINER ID        IMAGE               COMMAND                         CREATED             STATUS                       PORTS               NAMES
-fc9dd63a5cd8        ubuntu:14.04        apt-get -y install htop           7 days ago          Exited (127) 2 seconds ago                       condescending_engelbart
+$ docker ps -l
 
-$ docker commit fc9d learn/withhtop
-936981cf596412dcb781653a2a83b27416e9ebaa16d68ed3d2b2f0a7e591a6db
+$ docker commit <ID 'ZMUTOWANEGO' KONTENERA> learn/withhtop
 ```
+Polecenie `docker commit` wywołane z ID bazowego obrazu zwróci nam identyfikator nowopowstałego kontenera
