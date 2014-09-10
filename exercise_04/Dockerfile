@@ -4,11 +4,13 @@ MAINTAINER i_and_i "me@me.me"
 # Instalacja paczki ping
 RUN \
   apt-get update && \
-  apt-get install -y ping
+  apt-get install -y iputils-ping
 
 # Edycja jakiś konfiguracji, tak dla ściemy 
 RUN \
   echo "some content" > /etc/example_config
+
+# Tutaj jeszcze trochę :>
 RUN echo "listen-address *:8118" >> /etc/example_config
 RUN echo "debug 512" >> /etc/example_config
 
