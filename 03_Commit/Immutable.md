@@ -96,15 +96,6 @@ Commands we know:
 # Namespace additional explanation
 #### Namespace explanation
 
-When you run docker container it creates new namespace. The command from docker run becomes root process with 
-two PIDs - PID 1 in just created namespace and ephemeral PID visible from parent namespace. 
-You cannot view or affect siblings nor parent process in new namespace. 
-
-Every new container will have PID 1 
-
-More than that! Network, users, process tree and mounts are isolated by namespace. 
-Now we know it's true :)
-
 ## PID
 When you run docker container it creates new pid namespace. The command from docker run becomes root process with 
 two PIDs - PID 1 in just created namespace and ephemeral PID visible from parent namespace. 
