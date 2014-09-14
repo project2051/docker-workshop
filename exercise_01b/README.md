@@ -18,3 +18,13 @@ Rzućy okiem na kolekcję ściągniętych na nasz komputer obrazów:
 ```
 docker images
 ```
+
+Bardzo łatwo je przeszukać poleceniem search:
+```
+docker search jenkins
+```
+Jeśli chcemy znaleźć więcej informacji na temat obrazów, ich źródła, autorów, link do githuba to wbijamy na
+```
+https://registry.hub.docker.com/
+```
+
