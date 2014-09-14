@@ -1,7 +1,8 @@
 # Docker Commit
 
-## Process isolation check
+## Namespace isolation check
 
+### Process isolation
 ```
 docker run -it ubuntu bash
 ```
@@ -20,18 +21,14 @@ Run container2 with same command `docker run -it ubuntu bash`.
 They are completly different containers. Other hostname, ip and of course container1 has htop package while container2 doesn't.  
 Let's try to kill htop which is running on container1 from container2. We can't really see it in process list on container2 
 but knowing the pid we will try to do it anyways!  
-`bash: kill: (67) - No such process`. On docker host we can trace the PID of that process but it won't be the same. 
-Docker got process namespace separation.  
-It means that we can have multiple process tree on one computer (even with same PID numbers).  
-More than that! Network, users, process tree and mounts are isolated by namespace. 
-Now we know it's true :)
+`bash: kill: (67) - No such process`.  
+Now we know it's true :)  
   
-  Try to kill that process from host   
+Kill that process from host   
 ```
 kill `pgrep htop` 
 ``` 
 will be enough to kill htop. It is just a process so you can kill it, strace it, monitor it and see it in /proc/
-
 
 You can exit container2 by just pressing ctrl-D or `exit`, which will kill the bash shell and kill the container
 as this was it's main purpose to serve bash. In other words it will be on as long as bash is running, so killing bash
@@ -94,3 +91,33 @@ Commands we know:
 * network namespace
 * users namespace
 * mount namespace
+* 
+
+# Namespace additional explanation
+#### Namespace explanation
+
+When you run docker container it creates new namespace. The command from docker run becomes root process with 
+two PIDs - PID 1 in just created namespace and ephemeral PID visible from parent namespace. 
+You cannot view or affect siblings nor parent process in new namespace. 
+
+Every new container will have PID 1 
+
+More than that! Network, users, process tree and mounts are isolated by namespace. 
+Now we know it's true :)
+
+## PID
+When you run docker container it creates new pid namespace. The command from docker run becomes root process with 
+two PIDs - PID 1 in just created namespace and ephemeral PID visible from parent namespace. 
+You cannot view or affect siblings nor parent process in new namespace. 
+Every new container will have inside root process with PID 1.
+
+## NET
+Each net namespace has it's own eth device and lo 127.0.0.1.  
+It gives possibility to configure iptables and routing differently on your containers.
+
+## Users
+On every containers root user got UID 0 and GID 0 but that is not the same root.
+More than that! Network, users, process tree and mounts are isolated by namespace. 
+
+## Mounts
+#TODO
