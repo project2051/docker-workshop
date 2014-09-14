@@ -36,39 +36,33 @@ Docker got loads of switches and commands, not just run. `docker help` is your f
 * Quickly modify existing environment (for example: upgrade java version)
 * Prototyping
 
-## Basics
+## Proof of Isolation
+
+## Topics
 
 ### Images
 
-Lets check what we actually have - `docker images`. You should see ubuntu image already downloaded but wait, there's more!  
-Try `docker images -v`. Why did it download those intermediate containers, why does it need them?  
-It is all because of layers and how Union File System works - https://docs.docker.com/terms/layer/
+#TODO link
 
-Have a look at /var/lib/docker/repositories-aufs which is basically the information that `docker images` gives us.  
-
-#### Let's mess with the image!
-
-Find in /var/lib/docker/aufs/diff your ubuntu image and check what it contains.  
-Execute in / of ubuntu `echo 'You Like Docker. Docker Likes You.' >> ./etc/issue`
-  
-Try `docker run -it ubuntu cat /etc/issue`  
-
-Now clean up! `docker rm $(docker ps -aq) && docker rmi $(docker images -q)`  
-What happend is we deleted all create containers (container is created when it's executed with run) and then we deleted all images.  
-`docker pull ubuntu`  
-Again `docker run -it ubuntu cat /etc/issue`  
-
-We use ubuntu image but this is just an example. There is repository with hundreds of other distros and ready tu use images.  
-
-### Cache
+### Commiting - Mutable and Immutable containers
 
 #TODO link
 Will be explained with Dockerfile  
 
-### Isolation
+### Dockerfile - building image
 
 #TODO link
-Will be explained with Immutable Containers  
+Will be explained with Dockerfile  
+
+
+### Dockerfile advanced usage
+
+### Linking containers
+
+### FIG
+
+### Serf/
+
 
 # Summary
 What we have learned so far?  
@@ -78,13 +72,10 @@ Commands we know:
 * docker run
 * docker ps
 * docker images
-* docker rm
-* docker rmi
 * docker help
   
 
 # Things to check
 
 * docker scratch image -the smallest image avaliable for docker (3.6MB)  
-* `sudo baobab /var/lib/docker`  
-* `docker images --tree`  
+  
