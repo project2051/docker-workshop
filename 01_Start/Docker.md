@@ -42,7 +42,7 @@ Docker got loads of switches and commands, not just run. `docker help` is your f
 
 ### Images
 
-#TODO link
+https://github.com/project2051/warsjawa-docker-workshop/blob/master/02_Images/Docker_Images.md
 
 ### Commiting - Mutable and Immutable containers
 
