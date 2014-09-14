@@ -29,7 +29,8 @@ Now we know it's true :)
   Try to kill that process from host   
 ```
 kill `pgrep htop` 
-``` will be enough to kill htop. It is just a process so you can kill it, strace it, monitor it and see it in /proc/
+``` 
+will be enough to kill htop. It is just a process so you can kill it, strace it, monitor it and see it in /proc/
 
 
 You can exit container2 by just pressing ctrl-D or `exit`, which will kill the bash shell and kill the container
