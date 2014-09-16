@@ -1,6 +1,7 @@
 ## Przyklad real-life 
 
-Wyobraźmy sobie sytuację, w której musimy oskryptować gotowy soft, np. Jenkinsa. Na nasze szczęście, Jenkins udostępnia restowe API. Nie chcemy jednak instalować ani Javy, ani Jenkinsa na swoim komputerze - w dodatku Jenkins ten będzie uruchomiony na linuksie Ubuntu - czyli systemie, którego także nie chcemy instalować.
+Imagine a situation, in which our job is to write some scripts, that will manipulate a ready-made, existing program, such as Jenkins. Hopefully, Jenkins provides RESTful API to perform some administrative tasks. Our situation can be even more complex -  we don't like to install any Jenkins on our computer to have a safe testbed. We don't event want to install Java as well. We might be running another distro than our production server.
+
 
 Do akcji wkroczy kontener, korzystający z obrazu ubuntu, z  odpalonym procesem Jenkinsa. Po napisaniu skryptu po wszystkim elegancko posprzątamy, a na wypadek dalszych prac, z pomocą Dockerfile'a łatwo odtworzymy nasze środowisko.
 
