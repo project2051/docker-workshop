@@ -1,13 +1,13 @@
 ## Dockerfile
 
-Aby sprytniej przechowywać konfigurację kontenerów i być bliżej 'Infrastructure-as-a-Code', posługujemy się Dockerfile'ami, które dokładnie opisują, jak wygląda kontener.
+To store the container config in a wiser way and get closer to 'Infrastructure-as-a-Code' concept, we use Dockerfiles - text files with set of commands that strictly describe, how the container should be built.
 
-Zbudujmy znajdujący się w tym katalogu dockerfile
+In this folder you will find an example Dockerfile. Have a quick skim at it, and try to guess what it will create, before we will dive into its  syntax. Let's try to build out container:
 ```
 docker build .
 ```
 
-Uruchomienie:
+Now we can run it:
 ```
 docker run -i -t <container_id>
 ```
