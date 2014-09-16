@@ -1,21 +1,21 @@
 FROM ubuntu:latest
 MAINTAINER i_and_i "me@me.me"
 
-# Instalacja paczki ping
+# Package ping installation
 RUN \
   apt-get update && \
   apt-get install -y iputils-ping
 
-# Edycja jakiś konfiguracji, tak dla ściemy 
+# Quick edit some config (just a placeholder command :) ) 
 RUN \
   echo "some content" > /etc/example_config
 
-# Tutaj jeszcze trochę :>
+# And even more pointless commands...
 RUN echo "listen-address *:8118" >> /etc/example_config
 RUN echo "debug 512" >> /etc/example_config
 
 
-# Robienie roboty
+# Get it done!
 CMD \
   echo "Hi! " && \
   ping google.com
