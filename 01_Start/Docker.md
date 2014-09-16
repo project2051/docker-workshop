@@ -15,9 +15,11 @@ Docker "Hello world!" on
 sudo docker run -it ubuntu bash  
 ```  
 * OS X  
-```boot2docker start```  
-```export DOCKER_HOST=tcp://192.168.59.103:2375```    
-```docker run -it ubuntu bash```  
+```
+boot2docker start  
+export DOCKER_HOST=tcp://192.168.59.103:2375
+docker run -it ubuntu bash
+```  
 
 The -i switch is for interactive docker and -t is for pseudo-tty. We strongly encourage you to mess it up and run `docker run ubuntu bash`, `docker run -i ubuntu bash`, `docker run -t ubuntu bash`. Learn on your mistakes!  
 Docker got loads of switches and commands, not just run. `docker help` is your friend. If in doubt use it!
