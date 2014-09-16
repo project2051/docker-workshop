@@ -6,10 +6,11 @@ In this folder you will find an example Dockerfile. Have a quick skim at it, and
 ```
 docker build .
 ```
-
-Now we can run it:
+And run it:
 ```
 docker run -i -t <container_id>
 ```
 
-@TODO: pokazemy gdzei leza image i ile miejsca mogą zajmować
+### What are the pros of Dockerfile?
+* It's a CODE - Can be versioned, reviewed, easily distributed (imagine a VM image now)
+* Easy to read, write - maintain
