@@ -14,11 +14,6 @@ docker run -it -p 8080:8080 <image_id>    # -p switch needed with boot2docker
 ```
 
 And voila! Our Jenkins API is ready for the first requests at either http://<boot2docker_host>:8080 or at localhost:8080 (linux).
+Using OS X with boot2docker the -p (publish) flag is necessary, as we need to (p)ublish the container port to the lightweights VM interface to be accessable from our laptop.
 
-@TODO
-wyjasnic opcje -p, dlaczego entrypoint
-tutaj wchodzi EXPOSE.
-
-Pokazac jak to dziala na macu ten expose bo jednak czasem moze byc krzak
-
-Pokazac jak latwo mozna przenosic kontenery  : >
+As you can see from now - maintaining, moving your environment from one workstation to another haven't ever been so easy :smile:
