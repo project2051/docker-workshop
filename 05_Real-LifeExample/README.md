@@ -4,16 +4,16 @@ Imagine a situation, in which our job is to write some scripts, that will manipu
 
 Let's bring to the action container, which, using Ubuntu image, will fire up the Jenkins instance. After our work with its API we will easily cleanup our environment, and in case of further work - with a Dockerfile our test environment will be easy to recreate.
 
-Let's build and run our container
+Let's build and run our container...
 ```
 docker build .
 ```
-I uruchamiamy go:
+...run it...
 ```
 docker run -it -p 8080:8080 <image_id>    # -p switch needed with boot2docker
 ```
 
-And voila! Our Jenkins API is ready for the first requests at either http://<boot2docker_host>:8080 or at localhost:8080 (linux).
+... And voila! Our Jenkins API is ready for the first requests at either http://<boot2docker_host>:8080 or at localhost:8080 (linux).
 Using OS X with boot2docker the -p (publish) flag is necessary, as we need to (p)ublish the container port to the lightweights VM interface to be accessable from our laptop.
 
 As you can see from now - maintaining, moving your environment from one workstation to another haven't ever been so easy :smile:
