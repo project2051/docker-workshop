@@ -21,13 +21,25 @@ export DOCKER_HOST=tcp://192.168.59.103:2375
 docker run -it ubuntu bash
 ```  
 
-The -i switch is for interactive docker and -t is for pseudo-tty. We strongly encourage you to mess it up and run `docker run ubuntu bash`, `docker run -i ubuntu bash`, `docker run -t ubuntu bash`. Learn on your mistakes!  
+
+The -i switch is for interactive docker and -t is for pseudo-tty. We strongly encourage you to mess it up and run 
+`docker run ubuntu bash`, `docker run -i ubuntu bash`, `docker run -t ubuntu bash`. Learn on your mistakes!  
 Docker got loads of switches and commands, not just run. `docker help` is your friend. If in doubt use it!
+
+After running a container we can see basic info about it with `docker ps`.
+```
+ CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+ c166d7970638        postgres:latest     "/docker-entrypoint.   16 minutes ago      Up 16 minutes       5432/tcp            postgres-db         
+```
+
+You have there Container ID but this is just shorter version of real UUID (we will see it in next chapter) but most often 
+you will use just name for your containers as it is most convinient.
 
 ## Why Docker is good?
 ### These are four main pros of Docker
 * Size - it's not full VM, it's just a process  
-* Speed - lightweight containers have minimal overhead (compare `time docker run ubuntu ifconfig` to `time ifconfig` on your laptop. Too slow? Compare Docker to VMWare or VirtualBox)  
+* Speed - lightweight containers have minimal overhead (compare `time docker run ubuntu ifconfig` to `time ifconfig` 
+on your laptop. Too slow? Compare Docker to VMWare or VirtualBox)  
 * Portability - run it on any linux with kernel > 3.8 and be sure it will behave the same everywhere - Dockerfile  
 * Versioning - AUFS  
 
@@ -72,7 +84,6 @@ Commands we know:
 
 * docker run
 * docker ps
-* docker images
 * docker help
   
 
