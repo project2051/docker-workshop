@@ -1,5 +1,9 @@
 # Docker Images
 
+Docker use Graph to store versioned file systems and relationships between them.
+`docker images -viz | dot -Tpng -o docker.png`
+
+
 ## Official images
 We use ubuntu image but this is just an example. There is repository with hundreds of other distros and ready tu use images.  
 
@@ -102,3 +106,4 @@ Commands we know:
 
 * `sudo baobab /var/lib/docker`  
 * `docker images --tree`
+* `docker images -viz | dot -Tpng -o docker.png`

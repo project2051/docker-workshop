@@ -58,7 +58,6 @@ It will make your life easier in long run!
 
 
 ## Mutable containers
-#TODO MACOSX
 
 Immutable containers are fine but if we want to check something quick then we really need to get inside.  
 You can use ssh for it but why? It take resources, expose another port and is not risk free.  

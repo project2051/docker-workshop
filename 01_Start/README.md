@@ -62,7 +62,7 @@ Will be explained with Dockerfile
 
 ### FIG
 
-### Serf/
+### Serf
 
 
 # Summary
