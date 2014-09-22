@@ -2,7 +2,7 @@
 
 While everything on one container might sound tempting, it's not the best option. Application can misbehave if it is separated from other components and you want as much production environment resemblance as possible. 
 Linking is like creating a network connection between containers.  
-But wait a second, we can expose a port on a container. Why link? You can use -p and -P flags but sooner or later it turns out it's not enough. Linking gives you the power to automate it and create dynamic environments!
+But wait a second, we can expose a port on a container. Why link? You can use -p and -P flags but sooner or later it turns out it's not enough. Linking gives you the power to **automate it** and create **dynamic** environments!
 
 ## Django example
 
