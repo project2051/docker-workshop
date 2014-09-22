@@ -30,6 +30,7 @@ There's more:
 ## Searching for images
 
 Let's assume we want application that is not on our list like for example jenkins. We can look for it with `docker search jenkins`  
+```
     root@debian:/var/lib/docker# docker search jenkins  
     NAME                                             DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED  
     jenkins                                          Official Jenkins Docker image                   61        [OK]         
@@ -37,7 +38,7 @@ Let's assume we want application that is not on our list like for example jenkin
     aespinosa/jenkins                                Sets up a container with jenkins installed...   10                   [OK]  
     evarga/jenkins-slave                             This is a basic container to be used as a ...   5                    [OK]  
     zaiste/jenkins                                                                                   4                    [OK]  
-    
+```    
 We got quite a list of jenkins images. Official build comes always from a company or organization that created it. 
 Official build will always be one word, after colon you will have tag/version of build and unofficial builds starts <maintainer>/<image_name>  
 Which one to pick?  
