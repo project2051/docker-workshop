@@ -12,6 +12,7 @@ We will be running a web app built on Flask and Redis. Remeber linking container
 
 Our goal would be to build web application separated into two containers - one of them will cover the python-flask-based webapp responding to some HTTP requests, and the second container will be our Redis instance - key-value store in backend.
 
+Please go to `example_1` directory.
 Source code of the app can be found in `our_web_app.py`.
 We still have a Dockerfile, which will be a base to build webapp container. Take a closer look on its code.
 As a Redis container, we will use the default image from Docker Hub.
