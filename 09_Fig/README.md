@@ -30,8 +30,11 @@ We strongly encourage encourage you to play around with fig. First of all, meet 
 For more, look go to http://www.fig.sh/cli.html
 
 Lets try some experiments - please change the direction of the relationship. Let the redis container link to the web right now. Some of you may be surprised with 
-```ConnectionError: Error -2 connecting to redis_1:6379. Name or service not known.```
+```
+ConnectionError: Error -2 connecting to redis_1:6379. Name or service not known.
+```
 after running the application. This is one of the most important thing to keep in mind while designing services in several containers - the linking relation is NOT bi-directional.
-Service `web` needs to *be aware* of redis instance, so that it needs to link to redis instance. On the other hand, redis instance is completely unaware of what is happening around it. It's a bit tricky, and as you guess dynamically spawned containers needs some service discovery and maintaining such an environment with fig only is an overkill.
+
+Service `web` needs to **be aware** of redis instance, so that it needs to link to redis instance. On the other hand, redis instance is completely unaware of what is happening around it. It's a bit tricky, and as you guess dynamically spawned containers needs some service discovery and maintaining such an environment with fig only is an overkill.
 
 
