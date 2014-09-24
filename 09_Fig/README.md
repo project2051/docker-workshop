@@ -21,3 +21,10 @@ Now let's take a look on how everything of our webapp ecosystem is defined in `f
 ```
 fig up
 ```
+
+We strongly encourage encourage you to play around with fig. First of all, meet its most useful options and switches:
+* `fig up -d` will let you to run your container stack in detached mode. However, all the logs can be still easily browsed later on with `fig logs`. 
+* `fig ps` will show you all running containers
+* SCALE DAT! Run `fig scale redis=3` to bring up more or less instances of certain service
+* Typing just `fig` with no options will display some help and list of available commands. Just in case you forget some obvious `rm` `start` `stop` `build` actions.
+
