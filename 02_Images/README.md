@@ -56,9 +56,12 @@ Have a look at /var/lib/docker/repositories-aufs which is basically the informat
 ## Let's mess with the image!
 
 Find in /var/lib/docker/aufs/diff your ubuntu image and check what it contains.  
-Execute in / of ubuntu `echo 'You Like Docker. Docker Likes You.' >> ./etc/issue`
+
+Run bash in ubuntu container, and execute in / of this container `echo 'You Like Docker. Docker Likes You.' >> ./etc/issue`
   
 Try `docker run -it ubuntu cat /etc/issue`  
+
+Can you see your changes?
 
 ## Removing images
 
