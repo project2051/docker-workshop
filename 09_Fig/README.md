@@ -29,7 +29,11 @@ We strongly encourage encourage you to play around with fig. First of all, meet 
 * Typing just `fig` with no options will display some help and list of available commands. Just in case you forget some obvious `rm` `start` `stop` `build` actions.
 For more, look go to http://www.fig.sh/cli.html
 
-Lets try some experiments - please change the direction of the relationship. Let the redis container link to the web right now. Some of you may be surprised with 
+## Lets try some experiments 
+
+First of all, change the source code of the webapp and send another GET request. Because of using current directory as a volume, you don't need to rebuild the container - all the changes apply immediately!
+
+Now please change the direction of the relationship. Let the redis container link to the web right now. Some of you may be surprised with 
 ```
 ConnectionError: Error -2 connecting to redis_1:6379. Name or service not known.
 ```
