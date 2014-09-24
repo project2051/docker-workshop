@@ -29,6 +29,8 @@ We strongly encourage encourage you to play around with fig. First of all, meet 
 * Typing just `fig` with no options will display some help and list of available commands. Just in case you forget some obvious `rm` `start` `stop` `build` actions.
 For more, look go to http://www.fig.sh/cli.html
 
+Somebody might ask, how it's possible, that the containers 'link' to each other. How do they now, for instance, whats' the other containers PostgreSQL password and username? This command `fig run redis env` and `fig run web env` might give you the answers. It's just like linking containers with docker underneath - tons of environment variables, shared in a namespace let two services talk to each other :smile:
+
 ## Lets try some experiments 
 
 First of all, change the source code of the webapp and send another GET request. Because of using current directory as a volume, you don't need to rebuild the container - all the changes apply immediately!
