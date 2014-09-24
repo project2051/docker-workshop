@@ -12,6 +12,6 @@ docker run -i -t <container_id>
 ```
 
 ### What are the pros of Dockerfile?
-* It's a CODE - Can be versioned, reviewed, easily distributed (imagine a VM image now)
+* It's CODE - Can be versioned, reviewed, easily distributed (imagine a VM image now)
 * Easy to read, write - maintain
 * Can be added to project repository and become part of automated test run
