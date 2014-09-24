@@ -33,6 +33,15 @@ The -i switch is for interactive docker and -t is for pseudo-tty. We strongly en
 `docker run ubuntu bash`, `docker run -i ubuntu bash`, `docker run -t ubuntu bash`. Learn on your mistakes!  
 Docker got loads of switches and commands, not just run. `docker help` is your friend. If in doubt use it!
 
+And now, let's see how bash looks under fedora distro:
+```
+docker run -it fedora bash 
+```
+You will see that docker needs to download image of Fedora linux. Therefore, it will just  run bash command inside Fedora. Try running other command, like echo or cat:
+```
+docker run -it fedora cat /etc/issue
+```
+
 After running a container we can see basic info about it with `docker ps`.
 ```
  CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
