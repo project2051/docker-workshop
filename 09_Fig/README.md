@@ -29,7 +29,7 @@ We strongly encourage encourage you to play around with fig. First of all, meet 
 * Typing just `fig` with no options will display some help and list of available commands. Just in case you forget some obvious `rm` `start` `stop` `build` actions.
 For more, look go to http://www.fig.sh/cli.html
 
-Somebody might ask, how it's possible, that the containers 'link' to each other. How do they now, for instance, whats' the other containers PostgreSQL password and username? This command `fig run redis env` and `fig run web env` might give you the answers. It's just like linking containers with docker underneath - tons of environment variables, shared in a namespace let two services talk to each other :smile: Having a closer look to this tutorial http://www.fig.sh/wordpress.html is really all you need to know as for the practical example. More on WHY, rather than HOW: http://www.fig.sh/env.html , http://docs.docker.com/userguide/dockerlinks/
+Somebody might ask, how it's possible, that the containers 'link' to each other. How do they now, for instance, whats' the other containers PostgreSQL password and username? This command `fig run redis env` and `fig run web env` might give you the answers. Also check out the `/etc/hosts` file. That's the trick.  It's just like linking containers with docker underneath - tons of environment variables, shared in a namespace let two services talk to each other :smile: Having a closer look to this tutorial http://www.fig.sh/wordpress.html is really all you need to know as for the practical example. More on WHY, rather than HOW: http://www.fig.sh/env.html , http://docs.docker.com/userguide/dockerlinks/
 
 ## Lets try some experiments 
 
