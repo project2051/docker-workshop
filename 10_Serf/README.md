@@ -21,7 +21,7 @@ Serf v0.6.3
 Agent Protocol: 4 (Understands back to: 2)
 ```
 
-Now we can run Dockerfile with our serf-agent.
+Now we can run Dockerfile with our serf-agent.  
 `SERF_AGENT=$(docker run -d --name serf-agent -p 7946 -p 7373 serf-agent)`  
 The 7946 is the port which binds serf agent and 7373 is for RPC   
   
@@ -55,3 +55,15 @@ Well the cluster is alive and we have few instances of nginx running. We got ip'
 
 ## Use the cluster Luke
 
+So we should have few nginx containers running happily in the background.  
+We want to be able to reach any of them (as they are truly identical) from proxy. We picked haproxy as it's quick to configure and extremly fast. Let's build it and run it  
+`docker run -it --link serf-agent:serf-agent serf-haproxy`.  
+Now we should have another member in our `serf members`
+```
+f382f96a2f5c  172.17.0.97:7946   alive   role=haproxy
+```
+
+All the serf members that are nginx servers are added our cluster. We prepared two scripts. One for adding configuration to haproxy pointing to new members, and second for removing web servers from configuration.  
+Scripts work because of event handler data from serf - http://www.serfdom.io/docs/recipes/event-handler-router.html  
+  
+Go to your haproxy ip on port :88 and see how your cluster behaves when you add and remove containers with nginx!
