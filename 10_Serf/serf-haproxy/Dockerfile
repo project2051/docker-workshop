@@ -22,4 +22,4 @@ RUN chmod a+x /*.sh
 
 EXPOSE 7946 7373
 
-CMD supervisord -n
+CMD /etc/init.d/haproxy start && supervisord -n
