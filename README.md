@@ -9,7 +9,7 @@ Might be not really self-explanatory, because its just integrated part of our wo
 ***Note:*** Please do this two things just before attending workshop:
 
 * Install docker on your machine (or https://github.com/noplay/docker-osx , if on Mac OS X )
-* Install fig in any way that suits you http://www.fig.sh/install.html
+* Install fig in any way that suits you http://www.fig.sh/install.html , and also get Serf http://www.serfdom.io/downloads.html
 * Execute ``` ./download_deps_before.workshop.sh```
   This script will build all the containers, which will be running during the workshop. It's crucial because:
   * you will be sure that docker is up and running, so we won't waste time on installation and download and carry on with   excercises
