@@ -38,8 +38,9 @@ from docker host will kill the container too.
 
 We should have one running container now - container1.  
 Let's commit! ```docker commit $(docker ps -q) ubuntu-htop``` - it's that quick!  
-We got pretty long hash for our new container but we tagged it as ubuntu-htop. Run new container with htop, 
-remember you don't need bash for it `docker run -it ubuntu-htop htop`  
+Commit syntax is fairly easy - `docker ps -q` returned the numeric ID of the running container, on which we applied  a htop installation.
+We got pretty long hash for our new container but we tagged it as ubuntu-htop. Run new container with htop now - 
+(remember you don't need bash for it) `docker run -it ubuntu-htop htop`  
   
 What we really did with commit was creating another layer of AUFS with htop installed on top of ubuntu image.  
 You can still run unchanged ubuntu, it didn't get overwritten. You can run ubuntu-htop too. You can run as many of 
@@ -67,7 +68,7 @@ nsenter provides docker-enter, with this script you can enter any container you 
   
 I use it frequently for testing
 `nsenter --target $(docker inspect --format {{.State.Pid}} $(sudo docker ps -q | head -n1)) --mount --uts --ipc --net --pid` 
-- this command will get you quickly into the last running container.  
+- this command will get you quickly into the last running container.  Remember, that in case of OSX, you have to do the nsenter from the VM that is actually running docker.
   
 What is used here and we didn't mention before is docker inspect. Run it. Parse it. Get as much as you want from this json.  
 
