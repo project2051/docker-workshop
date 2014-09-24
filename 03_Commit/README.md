@@ -67,8 +67,7 @@ Docker doesn't provide a way to get inside but boy we are lucky, there is https:
 nsenter provides docker-enter, with this script you can enter any container you want by it's ID.  
   
 I use it frequently for testing
-`nsenter --target $(docker inspect --format {{.State.Pid}} $(sudo docker ps -q | head -n1)) --mount --uts --ipc --net --pid` 
-- this command will get you quickly into the last running container.  Remember, that in case of OSX, you have to do the nsenter from the VM that is actually running docker.
+`nsenter --target $(docker inspect --format {{.State.Pid}} $(sudo docker ps -q | head -n1)) --mount --uts --ipc --net --pid` - this command will get you quickly into the last running container.  Remember, that in case of OSX, you have to do the nsenter from the VM that is actually running docker.
   
 What is used here and we didn't mention before is docker inspect. Run it. Parse it. Get as much as you want from this json.  
 
