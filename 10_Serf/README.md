@@ -34,3 +34,22 @@ Mission accomplished!
 Have a look at `serf members` and when you done be sure to enter `serf leave`.
 
 ## Create serf cluster with containers
+We got for you simple serf-nginx container that will automatically connect to serf cluster. Build it and run it with:
+```
+docker run -d --link serf-agent:serf-agent serf-nginx
+```
+Run it again, and again.  
+Now let's enter our serf-agent container `docker-enter $SERF_AGENT` and do `serf members`
+```
+e2fd16480051  172.17.0.63:7946  alive   role=nginx
+80b09c4180dd  172.17.0.62:7946  alive   role=nginx
+e423f7aeff7e  172.17.0.44:7946  alive   role=serf-agent
+1c2d2aa0fcb0  172.17.0.60:7946  alive   role=nginx
+1eab0cad2ec0  172.17.0.61:7946  alive   role=nginx
+6a46b926278a  172.17.0.64:7946  alive   role=nginx
+```
+Well the cluster is alive and we have few instances of nginx running. We got ip's and we can enter any of them to see html page (almost :D) from nginx.
+
+
+## Use the cluster Luke
+
