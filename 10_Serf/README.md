@@ -25,8 +25,10 @@ Now we can run Dockerfile with our serf-agent.
 `SERF_AGENT=$(docker run -d --name serf-agent -p 7946 -p 7373 serf-agent)`  
 The 7946 is the port which binds serf agent and 7373 is for RPC   
   
-Okay now in one terminal window run `serf agent & serf join $(docker inspect -f "{{ .NetworkSettings.IPAddress }}" $SERF_AGENT):7946`
-
+Okay now in one terminal window run 
+```
+serf agent & serf join $(docker inspect -f "{{ .NetworkSettings.IPAddress }}" $SERF_AGENT):7946
+```
 ```
 Successfully joined cluster by contacting 1 nodes.
 ```
