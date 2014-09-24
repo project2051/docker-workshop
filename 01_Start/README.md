@@ -15,12 +15,19 @@ Docker "Hello world!" on
 sudo docker run -it ubuntu bash  
 ```  
 * OS X  
+You can use either traditional, boot2docker:  
 ```
 boot2docker start  
 export DOCKER_HOST=tcp://192.168.59.103:2375
 docker run -it ubuntu bash
 ```  
-
+or https://github.com/noplay/docker-osx
+```
+docker-osx start
+eval `docker-osx env` # It's just exporting DOCKER_HOST
+docker run -it ubuntu bash
+```
+***We highly recommend docker-osx, as it will enable some cool features later on***
 
 The -i switch is for interactive docker and -t is for pseudo-tty. We strongly encourage you to mess it up and run 
 `docker run ubuntu bash`, `docker run -i ubuntu bash`, `docker run -t ubuntu bash`. Learn on your mistakes!  
