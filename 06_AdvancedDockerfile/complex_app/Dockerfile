@@ -76,10 +76,6 @@ ADD ./grafana/config.js /src/grafana/config.js
 ADD ./grafana/dashboard.json /src/grafana/app/dashboards/default.json
 ADD ./nginx/nginx.conf /etc/nginx/nginx.conf
 ADD ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD bullshit_generator.sh /opt/bullshit_generator.sh
-ADD old_bullshit_generator.sh /opt/old_bullshit_generator.sh
-ADD feedme.sh /opt/feedme.sh
-ADD generate_and_feed.sh /opt/generate_and_feed.sh
 ADD crontab /crontab
 
 
