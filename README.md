@@ -6,8 +6,9 @@ We divided this repo in subdirectories, each of it contains practical examples o
 
 Might be not really self-explanatory, because its just integrated part of our workshop :smile:
 
-***Note:*** Please do this two things just before attending workshop:
+***Note:*** Please do these things just before attending workshop:
 
+* Please make sure that ***you have at least 8 GiBs of free disk space***, so that you won't fill up your SSD with container images ( this is due to downloading many different docker images which we will use in our examples and excercises. Of course you can remove these images right after moving from one excercise to another and/or rebuilt the container later on, but this will let us stay calm :smile:)
 * Install docker on your machine (or https://github.com/noplay/docker-osx , if on Mac OS X )
 * Install fig in any way that suits you http://www.fig.sh/install.html , and also get Serf http://www.serfdom.io/downloads.html
 * Execute ``` ./download_deps_before.workshop.sh```
