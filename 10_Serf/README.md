@@ -11,8 +11,7 @@ event handlers, detects failures, and more. The agent must run on every node tha
 Sounds pretty tempting :)
   
   
-***NOTE:*** If you don't have it already
-Let's get the newest version of serf from Hashicorp  
+***NOTE:*** If you don't have it already get the newest version of serf from Hashicorp  
 `wget http://dl.bintray.com/mitchellh/serf/0.6.3_linux_amd64.zip`  
 `unzip 0.6.3_linux_amd64.zip && mv serf /usr/bin/`  
    
