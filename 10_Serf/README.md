@@ -11,11 +11,12 @@ event handlers, detects failures, and more. The agent must run on every node tha
 Sounds pretty tempting :)
   
   
+***NOTE:*** If you don't have it already
 Let's get the newest version of serf from Hashicorp  
 `wget http://dl.bintray.com/mitchellh/serf/0.6.3_linux_amd64.zip`  
 `unzip 0.6.3_linux_amd64.zip && mv serf /usr/bin/`  
    
-As we got serf now on our computer let's try to check if it's working `serf version`.
+Let's try to check if it's working `serf version`.
 ```
 Serf v0.6.3
 Agent Protocol: 4 (Understands back to: 2)
