@@ -72,27 +72,41 @@ on your laptop. Too slow? Compare Docker to VMWare or VirtualBox)
 
 ### Images
 
-* https://github.com/project2051/warsjawa-docker-workshop/blob/master/02_Images/Docker_Images.md
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/02_Images/README.md
 
 ### Commiting - Mutable and Immutable containers
 
-* https://github.com/project2051/warsjawa-docker-workshop/blob/master/03_Commit/Immutable.md
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/03_Commit/README.md
 
 ### Dockerfile - building image
 
-#TODO link
-Will be explained with Dockerfile  
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/04_Dockerfile/README.md
 
+### Real Life Example
+
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/05_Real-LifeExample/README.md
 
 ### Dockerfile advanced usage
 
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/06_AdvancedDockerfile/README.md
+
+### X in Docker 
+
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/07_XinDocker/README.md
+
 ### Linking containers
+
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/08_LinkingContainers/README.md
 
 ### FIG
 
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/09_Fig/README.md
+
 ### Serf
 
+* https://github.com/project2051/warsjawa-docker-workshop/blob/master/10_Serf/README.md
 
+  
 # Summary
 What we have learned so far?  
 
