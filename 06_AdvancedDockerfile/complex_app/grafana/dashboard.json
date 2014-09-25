@@ -1,27 +1,189 @@
 {
-  "title": "randomWalkFunction",
-  "services": {
-    "filter": {
-      "list": [],
-      "time": {
-        "from": "now-15m",
-        "to": "now"
-      }
-    }
-  },
+  "title": "Grafana",
+  "tags": [],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
   "rows": [
     {
-      "title": "Welcome to Grafana",
-      "height": "500px",
-      "editable": true,
+      "title": "New row",
+      "height": "150px",
       "collapse": false,
-      "collapsable": true,
+      "editable": true,
       "panels": [
         {
+          "id": 1,
           "span": 12,
           "editable": true,
+          "type": "text",
+          "mode": "html",
+          "content": "<div class=\"text-center\" style=\"padding-top: 15px\">\n<img src=\"//grafana.org/assets/img/logo_transparent_200x75.png\"> \n</div>",
+          "style": {},
+          "title": "Welcome to"
+        }
+      ]
+    },
+    {
+      "title": "test",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "id": 4,
+          "span": 12,
           "type": "graph",
-          "loadingEditor": false,
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "max": null,
+            "min": null,
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "resolution": 100,
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": true,
+          "spyable": true,
+          "options": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "targets": [
+            {
+              "target": "randomWalk('random walk')",
+              "function": "mean",
+              "column": "value"
+            },
+            {
+              "target": "randomWalk('500')"
+            },
+            {
+              "target": "randomWalk('-1.5')"
+            },
+            {
+              "target": "scale(randomWalk('randomWalk'),3)"
+            }
+          ],
+          "aliasColors": {},
+          "aliasYAxis": {},
+          "title": "First Graph (click title to edit)",
+          "datasource": "graphite",
+          "renderer": "flot",
+          "annotate": {
+            "enable": false
+          }
+        }
+      ]
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "span": 6,
+          "editable": true,
+          "type": "graph",
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "annotate": {
+            "enable": false
+          },
+          "resolution": 100,
+          "lines": false,
+          "fill": 3,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 2,
+          "bars": true,
+          "stack": true,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false,
+            "alignAsTable": false,
+            "rightSide": false
+          },
+          "percentage": false,
+          "zerofill": true,
+          "nullPointMode": "connected",
+          "steppedLine": true,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "targets": [
+            {
+              "target": "randomWalk('50')"
+            }
+          ],
+          "aliasColors": {
+            "50": "#CCA300"
+          },
+          "aliasYAxis": {},
+          "title": "Second Graph"
+        },
+        {
+          "span": 6,
+          "editable": true,
+          "type": "graph",
           "datasource": null,
           "renderer": "flot",
           "x-axis": true,
@@ -46,12 +208,12 @@
           },
           "resolution": 100,
           "lines": true,
-          "fill": 0,
-          "linewidth": 1,
+          "fill": 6,
+          "linewidth": 5,
           "points": false,
           "pointradius": 5,
           "bars": false,
-          "stack": false,
+          "stack": true,
           "legend": {
             "show": true,
             "values": false,
@@ -71,246 +233,22 @@
           },
           "targets": [
             {
-              "target": "sumSeries(logs.*.active)"
+              "target": "integral(cactiStyle(scale(randomWalk('15000'),50)))"
             },
             {
-              "target": "sumSeries(logs.*.blocked)"
-            },
-            {
-              "target": "sumSeries(logs.*.disconnected)"
+              "target": "integral(cactiStyle(scale(randomWalk('15000'),1500000)))"
             }
           ],
-          "aliasColors": {
-            "sumSeries(logs.*.blocked)": "#6ED0E0",
-            "sumSeries(logs.*.disconnected)": "#E24D42"
-          },
+          "aliasColors": {},
           "aliasYAxis": {},
-          "title": "Cumulus"
+          "title": "Third Graph"
         }
-      ],
-      "notice": false
-    },
-    {
-      "title": "test",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 4,
-          "editable": true,
-          "type": "graph",
-          "datasource": null,
-          "renderer": "flot",
-          "x-axis": true,
-          "y-axis": true,
-          "scale": 1,
-          "y_formats": [
-            "short",
-            "short"
-          ],
-          "grid": {
-            "leftMax": null,
-            "rightMax": null,
-            "leftMin": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold2": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "annotate": {
-            "enable": false
-          },
-          "resolution": 100,
-          "lines": true,
-          "fill": 1,
-          "linewidth": 2,
-          "points": false,
-          "pointradius": 5,
-          "bars": false,
-          "stack": true,
-          "legend": {
-            "show": true,
-            "values": false,
-            "min": false,
-            "max": false,
-            "current": false,
-            "total": false,
-            "avg": false
-          },
-          "percentage": false,
-          "zerofill": true,
-          "nullPointMode": "connected",
-          "steppedLine": true,
-          "tooltip": {
-            "value_type": "individual",
-            "query_as_alias": true
-          },
-          "targets": [
-            {
-              "target": "logs.*.active",
-              "hide": false
-            }
-          ],
-          "aliasColors": {
-            "logs.ECSA2.active": "#629E51",
-            "logs.ECSA3.active": "#3F6833"
-          },
-          "aliasYAxis": {},
-          "title": "Active"
-        },
-        {
-          "span": 4,
-          "editable": true,
-          "type": "graph",
-          "datasource": null,
-          "renderer": "flot",
-          "x-axis": true,
-          "y-axis": true,
-          "scale": 1,
-          "y_formats": [
-            "short",
-            "short"
-          ],
-          "grid": {
-            "leftMax": null,
-            "rightMax": null,
-            "leftMin": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold2": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "annotate": {
-            "enable": false
-          },
-          "resolution": 100,
-          "lines": true,
-          "fill": 1,
-          "linewidth": 2,
-          "points": false,
-          "pointradius": 5,
-          "bars": false,
-          "stack": true,
-          "legend": {
-            "show": true,
-            "values": false,
-            "min": false,
-            "max": false,
-            "current": false,
-            "total": false,
-            "avg": false
-          },
-          "percentage": false,
-          "zerofill": true,
-          "nullPointMode": "connected",
-          "steppedLine": true,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          },
-          "targets": [
-            {
-              "target": "logs.*.disconnected"
-            }
-          ],
-          "aliasColors": {
-            "logs.ECSA1.disconnected": "#6ED0E0",
-            "logs.ECSA2.disconnected": "#1F78C1",
-            "logs.ECSA3.disconnected": "#65C5DB"
-          },
-          "aliasYAxis": {},
-          "title": "Disconnected"
-        },
-        {
-          "span": 4,
-          "editable": true,
-          "type": "graph",
-          "datasource": null,
-          "renderer": "flot",
-          "x-axis": true,
-          "y-axis": true,
-          "scale": 1,
-          "y_formats": [
-            "short",
-            "short"
-          ],
-          "grid": {
-            "leftMax": null,
-            "rightMax": null,
-            "leftMin": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold2": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "annotate": {
-            "enable": false
-          },
-          "resolution": 100,
-          "lines": true,
-          "fill": 1,
-          "linewidth": 2,
-          "points": false,
-          "pointradius": 5,
-          "bars": false,
-          "stack": true,
-          "legend": {
-            "show": true,
-            "values": false,
-            "min": false,
-            "max": false,
-            "current": false,
-            "total": false,
-            "avg": false
-          },
-          "percentage": false,
-          "zerofill": true,
-          "nullPointMode": "connected",
-          "steppedLine": true,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          },
-          "targets": [
-            {
-              "target": "logs.*.blocked"
-            }
-          ],
-          "aliasColors": {
-            "logs.ECSA1.blocked": "#E24D42",
-            "logs.ECSA2.blocked": "#890F02",
-            "logs.ECSA3.blocked": "#F29191"
-          },
-          "aliasYAxis": {},
-          "title": "Blocked"
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "New row",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [],
-      "notice": false
+      ]
     }
   ],
-  "editable": true,
-  "failover": false,
-  "panel_hints": true,
-  "style": "light",
   "pulldowns": [
     {
       "type": "filtering",
-      "collapse": false,
-      "notice": false,
       "enable": false
     },
     {
@@ -322,7 +260,6 @@
     {
       "type": "timepicker",
       "collapse": false,
-      "notice": false,
       "enable": true,
       "status": "Stable",
       "time_options": [
@@ -348,24 +285,17 @@
         "2h",
         "1d"
       ],
-      "now": true
+      "now": true,
+      "notice": false
     }
   ],
-  "loader": {
-    "save_gist": false,
-    "save_elasticsearch": true,
-    "save_local": true,
-    "save_default": true,
-    "save_temp": true,
-    "save_temp_ttl_enable": true,
-    "save_temp_ttl": "30d",
-    "load_gist": false,
-    "load_elasticsearch": true,
-    "load_elasticsearch_size": 20,
-    "load_local": false,
-    "hide": false
+  "time": {
+    "from": "now-15m",
+    "to": "now"
   },
-  "refresh": "30s",
-  "tags": [],
-  "timezone": "browser"
+  "templating": {
+    "list": []
+  },
+  "refresh": false,
+  "version": 2
 }
