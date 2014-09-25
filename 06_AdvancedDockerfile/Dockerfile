@@ -18,12 +18,11 @@ RUN chown postgres:postgres /etc/postgresql/9.3/main/*.conf
 ADD ./postgres/run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
 
-
 ADD ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 VOLUME ["/var/lib/postgresql"]
 
-EXPOSE 5432 5433
+EXPOSE 5432 
 
 CMD /etc/init.d/postgresql start && sudo -u postgres createuser -E -w graphite && \
     echo "ALTER USER graphite WITH PASSWORD 'graphite';" | psql -U postgres && \
