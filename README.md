@@ -22,7 +22,7 @@ This can get messy :smile:
   * just linux (kernel >=3.8) and Docker installed
   * fig -> http://www.fig.sh/install.html
   * serf -> http://www.serfdom.io/downloads.html
-  * all docker images built, you can use script -> https://github.com/project2051/warsjawa-docker-workshop/blob/master/download_deps_before.workshop.sh
+  * all docker images built, run script download_deps_before.workshop.sh with root in this repository  
 
 ## ***Setup***
 
