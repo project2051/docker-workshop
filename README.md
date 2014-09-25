@@ -4,14 +4,34 @@ This is a repository which will be used for a essential docker training held at 
 
 We divided this repo in subdirectories, each of it contains practical examples of what and how can be done with docker.
 
-Might be not really self-explanatory, because its just integrated part of our workshop :smile:
+Might be not really self-explanatory, because its just integrated part of our workshop :smile:  
 
-***Note:*** Please do these things just before attending workshop:
+  * Please make sure that ***you have at least 8 GiBs of free disk space***, so that you won't fill up your disk with container images ( this is due to downloading many different docker images which we will use in our examples and excercises. Of course you can remove these images right after moving from one excercise to another and/or rebuilt the container later on, but this will let us stay calm :smile:)
 
-* Please make sure that ***you have at least 8 GiBs of free disk space***, so that you won't fill up your SSD with container images ( this is due to downloading many different docker images which we will use in our examples and excercises. Of course you can remove these images right after moving from one excercise to another and/or rebuilt the container later on, but this will let us stay calm :smile:)
-* Install docker on your machine (or https://github.com/noplay/docker-osx , if on Mac OS X )
-* Install fig in any way that suits you http://www.fig.sh/install.html , and also get Serf http://www.serfdom.io/downloads.html
-* Execute ``` ./download_deps_before.workshop.sh```
-  This script will build all the containers, which will be running during the workshop. It's crucial because:
-  * you will be sure that docker is up and running, so we won't waste time on installation and download and carry on with   excercises
-  * it will also download hundreds of MBytes of images, packages, and anything, so that we don't have to rely on the internet connection
+
+
+## ***Best setup***
+
+You will have two virtual machines (you can use any virtualziation you want).  
+This can get messy :smile:
+  
+### First one  
+  * just linux (kernel >=3.8) and Docker installed
+  
+### Second one  
+  * just linux (kernel >=3.8) and Docker installed
+  * fig -> http://www.fig.sh/install.html
+  * serf -> http://www.serfdom.io/downloads.html
+  * all docker images built, you can use script -> https://github.com/project2051/warsjawa-docker-workshop/blob/master/download_deps_before.workshop.sh
+
+## ***Setup***
+
+VM's would help but if not you can always have it all on your laptop, docker, fig, serf and all images.
+If you use ***Mac OS X*** and don't want VM's -> https://github.com/noplay/docker-osx
+  
+  
+  
+***Note:*** 
+`download_deps_before.workshop.sh`  
+The script will help you make sure that docker is up and running, we want to go swiftly through excercises, it will also download everyting before so we won't have to rely on the internet connection.
+
