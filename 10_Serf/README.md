@@ -1,7 +1,7 @@
 # Serf
 
 What is Serf?  
-Serf is a tool for cluster membership, failure detection, and orchestration that is decentralized, fault-tolerant and highly available.  
+Serf is a tool for cluster membership, failure detection, and orchestration that is decentralized, fault-tolerant and highly available. *In brief, Serf tries to solve the missing service awareness issue, that FIG cluster faced in previous excercise*. Remember scaling the redis cluster by incresing the number of Redis containers? Actually it was nothing more that spawning certain amount of containers. We would rather expect our 'cluster' to detect spawning new instance, react to this event by loading new configuration, and so on ...
 
 ## Add your computer to serf cluster
 
