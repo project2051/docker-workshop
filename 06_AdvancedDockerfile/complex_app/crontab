@@ -1,2 +1,1 @@
-*/1 * * * * /opt/bullshit_generator.sh
-*/1 * * * * /opt/feedme.sh
+*/1 * * * * echo feed_me
