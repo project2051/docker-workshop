@@ -8,4 +8,4 @@ web:
   links:
     - redis
 redis:
-  image: redis
+  image: redis:2.8.6
