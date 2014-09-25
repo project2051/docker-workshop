@@ -20,8 +20,9 @@ Let's try to check if it's working `serf version`.
 Serf v0.6.3
 Agent Protocol: 4 (Understands back to: 2)
 ```
+***NOTE:*** You can run Serf both as a process on you workstation or in a container - It's up to you!
 
-Now we can run Dockerfile with our serf-agent.  
+We've chosen to run Dockerfile with our serf-agent.  
 `SERF_AGENT=$(docker run -d --name serf-agent -p 7946 -p 7373 serf-agent)`  
 The 7946 is the port which binds serf agent and 7373 is for RPC   
   
@@ -40,7 +41,7 @@ We got for you simple serf-nginx container that will automatically connect to se
 ```
 docker run -d --link serf-agent:serf-agent serf-nginx
 ```
-Run it again, and again.  
+Run it again, and again so that we will have many instances of nginx.  
 Now let's enter our serf-agent container `docker-enter $SERF_AGENT` and do `serf members`
 ```
 e2fd16480051  172.17.0.63:7946  alive   role=nginx
