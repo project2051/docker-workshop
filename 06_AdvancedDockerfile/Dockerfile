@@ -24,8 +24,10 @@ VOLUME ["/var/lib/postgresql"]
 
 EXPOSE 5432 
 
-CMD /etc/init.d/postgresql start && sudo -u postgres createuser -E -w graphite && \
+RUN /etc/init.d/postgresql start && sudo -u postgres createuser -E -w graphite && \
     echo "ALTER USER graphite WITH PASSWORD 'graphite';" | psql -U postgres && \
     echo "CREATE DATABASE graphite OWNER graphite;" | psql -U postgres && \
-    /etc/init.d/postgresql stop && \
-    /etc/init.d/supervisor start
+    /etc/init.d/postgresql stop 
+
+#    /etc/init.d/supervisor start
+CMD ["/usr/bin/supervisord"]    
