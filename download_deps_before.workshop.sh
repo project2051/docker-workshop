@@ -16,4 +16,6 @@ done
 for directory in `find . -name fig.yml -exec dirname {} \;` ;do
 	cd ${directory}
 	fig build 
+	fig up
+	fig stop
 done 
