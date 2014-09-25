@@ -61,7 +61,11 @@ There must be an easy way... And yes there is - Fast Isolated Containers develop
 by Orchard
 
 # Summary
-What we have learned so far?  
+
+So far we've learned that:
+* Linking container is nothing more than passing many environment variables and hostname from one container to another. There really nothing magic underneath.
+* While trying to link your custom-made containers, remember to declare as many environment variables with `ENV` command as 'linked' container will need. For instance - while linking to a database another container should be informed about database/schema name and some login credentials.
+* Linking container is a no bidirectional relation - linking is ***not*** the same as being linked. We'll explain this in detail during next excercise 
 
 # Things to check
 
