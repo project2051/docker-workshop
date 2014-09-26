@@ -1,11 +1,15 @@
 # Docker Images
 
-Docker use Graph to store versioned file systems and relationships between them.
-`docker images -viz | dot -Tpng -o docker.png`
+Docker uses a graph structure to store versioned file system layers and relationships between them.
+
+This funny command will visualize this structure:
+```
+docker images -viz | dot -Tpng -o docker.png
+```
 
 
 ## Official images
-We use ubuntu image but this is just an example. There is repository with hundreds of other distros and ready tu use images.  
+We use ubuntu image, but this is just an example. There is repository with hundreds of other distros and ready to use images.  
 
 Official:  
 
@@ -29,7 +33,8 @@ There's more:
 
 ## Searching for images
 
-Let's assume we want application that is not on our list like for example jenkins. We can look for it with `docker search jenkins`  
+Let's assume we want application that is not on our list, like for example jenkins. We can look for it with `docker search jenkins`  
+Let't have a closer look on the results:
 ```
     root@debian:/var/lib/docker# docker search jenkins  
     NAME                                             DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED  
@@ -39,23 +44,24 @@ Let's assume we want application that is not on our list like for example jenkin
     evarga/jenkins-slave                             This is a basic container to be used as a ...   5                    [OK]  
     zaiste/jenkins                                                                                   4                    [OK]  
 ```    
-We got quite a list of jenkins images. Official build comes always from a company or organization that created it. 
-Official build will always be one word, after colon you will have tag/version of build and unofficial builds starts <maintainer>/<image_name>  
+We got quite a list of jenkins images. **Official** build comes always from a company or organization that created it. 
+Official build will always be one word, after colon you will have tag/version of build. **Unofficial** builds are named in the pattern of <maintainer>/<image_name>.  
 Which one to pick?  
 It depends what you expect. Try it. You can always dig deeper, go to github and check sources (when it's automated).  
 
 ## Pull
 
-Lets check what we actually have - `docker images`. You should see ubuntu image already downloaded but wait, there's more!  
+Lets check what images we actually have on our host - `docker images`. You should see ubuntu image already downloaded but wait, there's more!  
 Try `docker images -v`.  
 Why did it download those intermediate containers, why does it need them?  
 It is all because of layers and how Union File System works - https://docs.docker.com/terms/layer/
 
-Have a look at /var/lib/docker/repositories-aufs which is basically the information that `docker images` gives us.  
+Have a look at /var/lib/docker/repositories-aufs which is basically the information that `docker images` gives us. Does the graph from the beginning of this excercise look more familiar now? :smile:
+
 
 ## Let's mess with the image!
 
-Find in /var/lib/docker/aufs/diff your ubuntu image and check what it contains.  
+Find in `/var/lib/docker/aufs/diff` your ubuntu image and check what it contains.  
 
 Run bash in ubuntu container, and execute in / of this container `echo 'You Like Docker. Docker Likes You.' >> ./etc/issue`
   
