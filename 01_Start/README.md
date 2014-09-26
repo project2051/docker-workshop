@@ -29,7 +29,7 @@ docker run -it ubuntu bash
 ```
 ***We highly recommend docker-osx, as it will enable some cool features later on***
 
-The -i switch is for interactive docker and -t is for pseudo-tty. We strongly encourage you to mess it up and run 
+The -i switch is for interactive mode and -t is to allocate a pseudo-tty. We strongly encourage you to mess it up and run 
 `docker run ubuntu bash`, `docker run -i ubuntu bash`, `docker run -t ubuntu bash`. Learn on your mistakes!  
 Docker got loads of switches and commands, not just run. `docker help` is your friend. If in doubt use it!
 
