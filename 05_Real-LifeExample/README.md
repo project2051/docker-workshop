@@ -18,7 +18,9 @@ docker build .
 docker run -it -p 8080:8080 <image_id>    # -p switch needed with boot2docker
 ```
 
-... And voila! Our Jenkins API is ready for the first requests at either http://<boot2docker_host>:8080 or at localhost:8080 (linux).
-Using OS X with boot2docker the -p (publish) flag is necessary, as we need to (p)ublish the container port to the lightweights VM interface to be accessable from our laptop.
+... And voila! Our Jenkins API is ready for the first requests at either http://<boot2docker_vm_ip>:8080 (boot2docker) or at http://localhost:8080 (linux) or at http://localdocker:8080 (docker-osx).
+Using OS X with boot2docker the -p (publish) flag is necessary, as we need to (p)ublish the containers port to the lightweights VM interface to be accessable from our laptop.
+
+Docker container's network interfaces are bridges, same ones as you can setup with KVM/VMWare/VirtualBox machine. Packets are 'switched' over these interfaces - that give us warranty, that the TCP/IP stack communication with a container works exactly like between two virtual hosts. 
 
 As you can see from now - maintaining, moving your environment from one workstation to another haven't ever been so easy :smile:
