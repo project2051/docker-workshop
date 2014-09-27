@@ -3,28 +3,28 @@
 ## Namespace isolation check
 
 ### Process isolation
+
+Let's run a shell in our ubuntu-based container:
 ```
 docker run -it ubuntu bash
 ```
-
-Let's install htop package inside our container1   
-
+And then install htop package inside this container:   
 ```
 apt-get update
 apt-get install htop
 htop
 ```
-  
-What funny can you see in htop?
+What funny can you see in htop? Just two processes. Nothing more. Every container, with help of linux namespaces, is an **isolated process pool**.
+   
     
-Run container2 with same command `docker run -it ubuntu bash`.
+Run the second container, with same command - `docker run -it ubuntu bash`.
 They are completly different containers. Other hostname, ip and of course container1 has htop package while container2 doesn't.  
 Let's try to kill htop which is running on container1 from container2. We can't really see it in process list on container2 
 but knowing the pid we will try to do it anyways!  
 `bash: kill: (67) - No such process`.  
 Now we know it's true :)  
   
-Kill that process from host   
+Kill that process from host:   
 ```
 kill `pgrep htop` 
 ``` 
