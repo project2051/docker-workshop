@@ -63,7 +63,7 @@ Have a look at /var/lib/docker/repositories-aufs which is basically the informat
 
 Find in `/var/lib/docker/aufs/diff` your ubuntu image and check what it contains.  
 
-Run bash in ubuntu container, and execute in / of this container `echo 'You Like Docker. Docker Likes You.' >> ./etc/issue`
+Run bash in ubuntu container, and execute in `/` directory of this container `echo 'You Like Docker. Docker Likes You.' >> ./etc/issue`
   
 Try `docker run -it ubuntu cat /etc/issue`  
 
@@ -80,9 +80,9 @@ Error? Just as we said so.
   
 `docker images -a | grep _conflicting_container_` - wait, it's not here...  We will talk about commiting more onward but for now you can find conflicting container here `docker ps -a`.  
 Delete every commited container `docker rm $(docker ps -aq)`. Got it!  
-Now `docker rmi ubuntu`. Success!  
+Now `docker rmi ubuntu`. **Success!**  
   
-We used two new flags here -a (all) and -q (quiet, show just IDs). They come in handy so you can leave your awk and sed skills at home.  
+We used two new flags here: -a (all) and -q (quiet, show just IDs). They come in handy so you can leave your awk and sed skills at home.  
   
 So our command to remove all iamges will look like `docker rm $(docker ps -aq) && docker rmi $(docker images -q)`  
 We delete all commited containers and then we delete all images.
