@@ -66,8 +66,6 @@ on your laptop. Too slow? Compare Docker to VMWare or VirtualBox)
 * Quickly modify existing environment (for example: upgrade java version)
 * Prototyping
 
-## Proof of Isolation
-
 ## Topics
 
 ### Images
