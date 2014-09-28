@@ -31,9 +31,9 @@ For more, look go to http://www.fig.sh/cli.html
 
 Somebody might ask, how it's possible, that the containers 'link' to each other. How do they now, for instance, whats' the other containers PostgreSQL password and username? Well, it's nothing more than classic docker link we've learned so far, in previosu excercise :smile: This command `fig run redis env` and `fig run web env` might give you the answers. Also check out the `/etc/hosts` file. That's the trick.  It's just like linking containers with docker underneath - tons of environment variables, shared in a namespace let two services talk to each other :smile: Having a closer look to this tutorial http://www.fig.sh/wordpress.html is really all you need to know as for the practical example. More on WHY, rather than HOW: http://www.fig.sh/env.html , http://docs.docker.com/userguide/dockerlinks/
 
-## Lets try some experiments 
+## Let's try some experiments 
 
-First of all, change the source code of the webapp and send another GET request. Because of using current directory as a volume, you don't need to rebuild the container - all the changes apply immediately!
+First of all, ***modify the source code of the webapp*** and send another GET request. Because of using current directory as a volume, you don't need to rebuild the container - all the changes apply immediately!
 
 Now please change the direction of the relationship. Let the redis container link to the web right now. Some of you may be surprised with 
 ```
@@ -42,5 +42,7 @@ ConnectionError: Error -2 connecting to redis_1:6379. Name or service not known.
 after running the application. This is one of the most important thing to keep in mind while designing services in several containers - the linking relation is NOT bi-directional.
 
 Service `web` needs to **be aware** of redis instance, so that it needs to link to redis instance. On the other hand, redis instance is completely unaware of what is happening around it. It's a bit tricky, and as you guess dynamically spawned containers needs some service discovery and maintaining such an environment with fig only is an overkill.
+
+Keep in mind previous lesson about linking - linking two containers is nothing more that passing environment variables from one container to another, so that one of them 'is equipped with contact info' of the second one and can establish a connection. ***When designing a Dockerfile for your custom app make sure that it contains enough pieces of information (env. variables) about its services (like login credentials) so that after passing the to another container it will be really able to contact it***
 
 
