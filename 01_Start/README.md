@@ -59,8 +59,9 @@ docker attach $DOCKER_ID
 ```
 Yay! You are in your container even though you don't know it's UUDI.  
   
-Next trick is how to exit the container without killing it. Normally you would type `exit` or control-D but this would also kill root process of container (in that case /bin/bash with PID 1).  
-`ctrl-p + ctrl-q` - will exit the container without killing it. 
+Next trick is how to exit the container without killing it.  
+Normally you would type `exit` or control-D but this would also kill root process of container (in that case /bin/bash with PID 1).  
+`ctrl-p + ctrl-q` - will exit the container without killing it.  
 Now you can type `docker stop $DOCKER_ID`. This will be end of fun with this container :smile:
 
 ## Why Docker is good?
