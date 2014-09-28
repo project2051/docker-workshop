@@ -48,8 +48,20 @@ After running a container we can see basic info about it with `docker ps`.
  c166d7970638        postgres:latest     "/docker-entrypoint.   16 minutes ago      Up 16 minutes       5432/tcp            postgres-db         
 ```
 
-You have there Container ID but this is just shorter version of real UUID (we will see it in next chapter) but most often 
-you will use just name for your containers as it is most convinient.
+You have there Container ID but this is just shorter version of real UUID (we will see it in next chapter) but most often you will use just name for your containers as it is most convinient.
+
+### Trick
+
+Use variable (we use BASH) for storing your container UUID so you can easily reuse it.
+```
+DOCKER_ID=$(docker run -itd ubuntu)  
+docker attach $DOCKER_ID
+```
+Yay! You are in your container even though you don't know it's UUDI.  
+  
+Next trick is how to exit the container without killing it. Normally you would type `exit` or control-D but this would also kill root process of container (in that case /bin/bash with PID 1).  
+`ctrl-p + ctrl-q` - will exit the container without killing it. 
+Now you can type `docker stop $DOCKER_ID`. This will be end of fun with this container :smile:
 
 ## Why Docker is good?
 ### These are four main pros of Docker
@@ -112,8 +124,9 @@ Commands we know:
 
 * docker run
 * docker ps
+* docker attach
+* docker stop
 * docker help
-  
 
 # Things to check
 
