@@ -18,14 +18,8 @@ Why it might be usable?
 For example Tor browser that protects your privacy and leaves no trace when you finish using it.
 ```
 docker build -t onion-browser .
-```
-
-```
 XSOCK=/tmp/.X11-unix/X0
-```
-
-```
-sudo docker run -it -v $XSOCK:$XSOCK onion-browser
+docker run -it -v $XSOCK:$XSOCK onion-browser
 ```
 
 After a bit Hidden Wiki should show up after refresh.
