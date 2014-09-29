@@ -43,6 +43,6 @@ after running the application. This is one of the most important thing to keep i
 
 Service `web` needs to **be aware** of redis instance, so that it needs to link to redis instance. On the other hand, redis instance is completely unaware of what is happening around it. It's a bit tricky, and as you guess dynamically spawned containers needs some service discovery and maintaining such an environment with fig only is an overkill.
 
-Keep in mind previous lesson about linking - linking two containers is nothing more that passing environment variables from one container to another, so that one of them 'is equipped with contact info' of the second one and can establish a connection. ***When designing a Dockerfile for your custom app make sure that it contains enough pieces of information (env. variables) about its services (like login credentials) so that after passing the to another container it will be really able to contact it***
+Keep in mind previous lesson about linking - linking two containers is nothing more that passing environment variables from one container to another, so that one of them 'is equipped with contact info' of the second one and can establish a connection. ***When designing a Dockerfile for your custom app make sure that it contains enough pieces of information (env. variables) about its services (like login credentials) so that after passing them to another container it will be really able to contact it***
 
 
