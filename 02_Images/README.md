@@ -84,7 +84,7 @@ Now `docker rmi ubuntu`. **Success!**
   
 We used two new flags here: -a (all) and -q (quiet, show just IDs). They come in handy so you can leave your awk and sed skills at home.  
   
-So our command to remove all iamges will look like `docker rm $(docker ps -aq) && docker rmi $(docker images -q)`  
+So our command to remove all images will look like `docker rm $(docker ps -aq) && docker rmi $(docker images -q)`  
 We delete all commited containers and then we delete all images.
   
 ## Stop messing with the image!

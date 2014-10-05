@@ -74,7 +74,7 @@ on your laptop. Too slow? Compare Docker to VMWare or VirtualBox)
 
 ### but beside that you can find it valuable for your reasons  
 * Escape dependecy hell on your laptop
-* Continious integration
+* Continuous integration
 * Send Dockerfile via email or xmmp to your friend so you have the same environment
 * Quickly modify existing environment (for example: upgrade java version)
 * Prototyping
