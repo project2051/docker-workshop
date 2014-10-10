@@ -67,6 +67,9 @@ So far we've learned that:
 * While trying to link your custom-made containers, remember to declare as many environment variables with `ENV` command as 'linked' container will need. For instance - while linking to a database another container should be informed about database/schema name and some login credentials.
 * Linking container is a no bidirectional relation - linking is ***not*** the same as being linked. We'll explain this in detail during next excercise 
 
+***And the most important conclusion***
+***When designing a Dockerfile for your custom app make sure that it contains enough pieces of information (set in environment variables) about its services (like login credentials) so that after passing them to another container in linking procedure it will be really able to contact it***
+
 # Things to check
 
 * projects that make it easy to create dynamic environment
