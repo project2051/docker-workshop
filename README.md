@@ -12,8 +12,10 @@ Might be not really self-explanatory, because its just integrated part of our wo
 
 ## ***Best setup***
 
-You will have two virtual machines (you can use any virtualziation you want).  
-This can get messy :smile:
+You will have two virtual machines (you can use any virtualziation you want). This can get messy :smile:
+
+You can easily set up your environment on VirtualBox with Vagrant. Just install it on your local machine, enter the `setup` directory and follow the instructions.
+
   
 ### First one  
   * just linux (kernel >=3.8) and Docker installed
