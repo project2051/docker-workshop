@@ -1,0 +1,12 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "phusion/ubuntu-14.04-amd64"
+
+$script = <<SCRIPT
+curl -sSL https://get.docker.com/ | sh
+curl -L https://github.com/docker/fig/releases/download/1.0.0/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
+git clone https://github.com/project2051/warsjawa-docker-workshop.git
+cd warsjawa-docker-workshop &&  sudo ./download_deps_before.workshop.sh
+SCRIPT
+
+    config.vm.provision "shell", inline: $script
+end
