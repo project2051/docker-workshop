@@ -22,7 +22,8 @@ Agent Protocol: 4 (Understands back to: 2)
 ```
 ***NOTE:*** You can run Serf both as a process on you workstation or in a container - It's up to you!
 
-We've chosen to run Dockerfile with our serf-agent.  
+We've chosen to run Dockerfile with our serf-agent. 
+`docker build -t serf-agent serf-agent`
 `SERF_AGENT=$(docker run -d --name serf-agent -p 7946 -p 7373 serf-agent)`  
 The 7946 is the port which binds serf agent and 7373 is for RPC   
   
@@ -38,9 +39,8 @@ Have a look at `serf members` and when you done be sure to enter `serf leave`.
 
 ## Create serf cluster with containers
 We got for you simple serf-nginx container that will automatically connect to serf cluster. Build it and run it with:
-```
-docker run -d --link serf-agent:serf-agent serf-nginx
-```
+`docker build -t serf-nginx serf-nginx`
+`docker run -d --link serf-agent:serf-agent serf-nginx`
 Run it again, and again so that we will have many instances of nginx.  
 Now let's enter our serf-agent container `docker-enter $SERF_AGENT` and do `serf members`
 ```
@@ -58,6 +58,7 @@ Well the cluster is alive and we have few instances of nginx running. We got ip'
 
 So we should have few nginx containers running happily in the background.  
 We want to be able to reach any of them (as they are truly identical) from proxy. We picked haproxy as it's quick to configure and extremly fast. Let's build it and run it  
+`docker build -t serf-haproxy serf-haproxy`
 `docker run -it --link serf-agent:serf-agent serf-haproxy`.  
 Now we should have another member in our `serf members`
 ```
