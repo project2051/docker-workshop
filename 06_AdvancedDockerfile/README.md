@@ -9,7 +9,7 @@ docker build -t advanced .
 ```
 Run the container
 ```
-docker run -it -v /var/lib/postgresql:$PWD/data advanced 
+docker run -it -v /var/lib/postgresql:$PWD/data -p 80:80 advanced 
 ```
 
 How does the volume work?
