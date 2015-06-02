@@ -62,11 +62,13 @@ It will make your life easier in long run!
 
 Immutable containers are fine but if we want to check something quick then we really need to get inside.  
 You can use ssh for it but why? It take resources, expose another port and is not risk free.  
-  
-Docker doesn't provide a way to get inside but boy we are lucky, there is https://github.com/jpetazzo/nsenter  
+
+Docker provide now docker exec, with that command you can quickly enter or run any command in the running container.
+
+Before we used nsenter https://github.com/jpetazzo/nsenter  
 nsenter provides docker-enter, with this script you can enter any container you want by it's ID.  
   
-I use it frequently for testing
+
 `nsenter --target $(docker inspect --format {{.State.Pid}} $(sudo docker ps -q | head -n1)) --mount --uts --ipc --net --pid` - this command will get you quickly into the last running container.  Remember, that in case of OSX, you have to do the nsenter from the VM that is actually running docker.
   
 What is used here and we didn't mention before is docker inspect. Run it. Parse it. Get as much as you want from this json.  
